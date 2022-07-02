@@ -249,14 +249,18 @@ const newPerson = new Person();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 class Request {
+  constructor(url) {
+    this.url = url;
+  }
+
   async get() {
-    const res = await fetch('assets/db/data.json');
+    const res = await fetch(this.url);
     return await res.json();
   }
 
 }
 
-const req = new Request();
+const req = new Request('assets/db/data.json');
 /* harmony default export */ __webpack_exports__["default"] = (req);
 
 /***/ })
